@@ -461,25 +461,32 @@ body {
 .social-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
-    margin: 2rem 0;
+    margin: 3rem 0;
 }
 
 .social-icon {
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
     text-decoration: none;
     transition: var(--transition);
     position: relative;
-    box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
-    border: 2px solid transparent;
+    box-shadow: 0 0 25px rgba(255, 0, 110, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
+    cursor: pointer;
+}
+
+.social-icon svg {
+    width: 45px;
+    height: 45px;
+    fill: currentColor;
+    transition: var(--transition);
 }
 
 .social-icon::before {
@@ -493,6 +500,7 @@ body {
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.3s ease, height 0.3s ease;
+    z-index: -1;
 }
 
 .social-icon:hover::before {
@@ -502,59 +510,75 @@ body {
 
 /* Facebook Icon */
 .facebook-icon {
-    background: linear-gradient(135deg, #1877F2, #0A66C2);
+    background: linear-gradient(135deg, #1877F2 0%, #0A66C2 100%);
     color: white;
 }
 
 .facebook-icon:hover {
-    transform: scale(1.2) rotate(360deg);
-    box-shadow: 0 0 40px rgba(24, 119, 242, 0.6);
+    transform: scale(1.25) rotate(360deg);
+    box-shadow: 0 0 50px rgba(24, 119, 242, 0.8), 0 0 100px rgba(24, 119, 242, 0.4);
     border-color: #1877F2;
+}
+
+.facebook-icon:hover svg {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
 /* WhatsApp Icon */
 .whatsapp-icon {
-    background: linear-gradient(135deg, #25D366, #128C7E);
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: white;
 }
 
 .whatsapp-icon:hover {
-    transform: scale(1.2) rotate(360deg);
-    box-shadow: 0 0 40px rgba(37, 211, 102, 0.6);
+    transform: scale(1.25) rotate(360deg);
+    box-shadow: 0 0 50px rgba(37, 211, 102, 0.8), 0 0 100px rgba(37, 211, 102, 0.4);
     border-color: #25D366;
+}
+
+.whatsapp-icon:hover svg {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
 /* Instagram Icon */
 .instagram-icon {
-    background: linear-gradient(135deg, #FF006E, #FFBE0B, #FB5607);
+    background: linear-gradient(135deg, #FF006E 0%, #FFBE0B 50%, #FB5607 100%);
     color: white;
 }
 
 .instagram-icon:hover {
-    transform: scale(1.2) rotate(360deg);
-    box-shadow: 0 0 40px rgba(255, 0, 110, 0.6);
+    transform: scale(1.25) rotate(360deg);
+    box-shadow: 0 0 50px rgba(255, 0, 110, 0.8), 0 0 100px rgba(255, 190, 11, 0.4);
     border-color: #FFBE0B;
+}
+
+.instagram-icon:hover svg {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
 /* TikTok Icon */
 .tiktok-icon {
-    background: linear-gradient(135deg, #FF0050, #00F7EF);
+    background: linear-gradient(135deg, #FF0050 0%, #25F4EE 100%);
     color: white;
 }
 
 .tiktok-icon:hover {
-    transform: scale(1.2) rotate(360deg);
-    box-shadow: 0 0 40px rgba(255, 0, 80, 0.6);
-    border-color: #00F7EF;
+    transform: scale(1.25) rotate(360deg);
+    box-shadow: 0 0 50px rgba(255, 0, 80, 0.8), 0 0 100px rgba(37, 244, 238, 0.4);
+    border-color: #25F4EE;
+}
+
+.tiktok-icon:hover svg {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
 }
 
 .social-icon {
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse 2.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+        box-shadow: 0 0 25px rgba(255, 0, 110, 0.3);
     }
     50% {
         box-shadow: 0 0 40px rgba(255, 0, 110, 0.6), inset 0 0 20px rgba(255, 0, 110, 0.2);
@@ -637,9 +661,13 @@ body {
     }
 
     .social-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+        width: 70px;
+        height: 70px;
+    }
+
+    .social-icon svg {
+        width: 35px;
+        height: 35px;
     }
 
     .section {
@@ -682,9 +710,17 @@ body {
     }
 
     .social-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .social-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-container {
+        gap: 1rem;
     }
 }
 
